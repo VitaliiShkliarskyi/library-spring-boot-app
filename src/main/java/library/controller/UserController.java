@@ -32,7 +32,6 @@ public class UserController {
     private final RequestDtoMapper<UserRequestDto, User> userRequestDtoMapper;
     private final ResponseDtoMapper<UserResponseDto, User> userResponseDtoMapper;
 
-
     public UserController(UserService userService,
                           SortingService sortingService,
                           RequestDtoMapper<UserRequestDto, User> userRequestDtoMapper,
@@ -50,7 +49,8 @@ public class UserController {
                 .map(userResponseDtoMapper::mapToDto)
                 .collect(Collectors.toList());
     }
-/** http://localhost:8080/users/sort?page=0&size=20&sortBy=name:ASC;phoneNumber:DESC **/
+
+    /** http://localhost:8080/users/sort?page=0&size=20&sortBy=name:ASC;phoneNumber:DESC **/
     @GetMapping("/sort")
     @ApiOperation(value = "Get all sorted users page by page")
     public List<UserResponseDto> getAllSorted(@RequestParam(defaultValue = "20")

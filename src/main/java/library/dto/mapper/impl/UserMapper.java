@@ -1,14 +1,12 @@
 package library.dto.mapper.impl;
 
 import java.util.stream.Collectors;
-
 import library.dto.mapper.RequestDtoMapper;
 import library.dto.mapper.ResponseDtoMapper;
 import library.dto.request.UserRequestDto;
 import library.dto.response.UserResponseDto;
 import library.model.Book;
 import library.model.User;
-import library.service.BookService;
 import org.springframework.stereotype.Component;
 
 @Component
