@@ -10,5 +10,4 @@ public class BookRequestDto {
     private String title;
     @NotNull(message = "Book author cannot be null")
     private String author;
-    private Long userId;
 }

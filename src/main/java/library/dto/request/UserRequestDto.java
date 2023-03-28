@@ -1,6 +1,5 @@
 package library.dto.request;
 
-import java.util.List;
 import library.lib.ValidPhoneNumber;
 import lombok.Data;
 import javax.validation.constraints.NotNull;
@@ -11,5 +10,4 @@ public class UserRequestDto {
     private String name;
     @ValidPhoneNumber
     private String phoneNumber;
-    private List<Long> bookIds;
 }

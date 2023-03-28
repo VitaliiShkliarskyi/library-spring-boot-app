@@ -1,6 +1,6 @@
 package library.controller;
 
-import java.util.List;
+import io.swagger.annotations.ApiOperation;
 import library.model.Book;
 import library.model.User;
 import library.service.BookService;
@@ -21,6 +21,7 @@ public class InjectController {
     }
 
     @GetMapping
+    @ApiOperation(value = "Inject test data")
     public String inject() {
         User firstUser = new User();
         firstUser.setName("Bob");

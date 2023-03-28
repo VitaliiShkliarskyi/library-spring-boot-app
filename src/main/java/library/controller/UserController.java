@@ -52,7 +52,7 @@ public class UserController {
     }
 /** http://localhost:8080/users/sort?page=0&size=20&sortBy=name:ASC;phoneNumber:DESC **/
     @GetMapping("/sort")
-    @ApiOperation(value = "Get all sorted users by page")
+    @ApiOperation(value = "Get all sorted users page by page")
     public List<UserResponseDto> getAllSorted(@RequestParam(defaultValue = "20")
                                             @ApiParam(value =
                                                     "Default number of objects on the page is 20")
@@ -86,14 +86,14 @@ public class UserController {
     @PutMapping("/{id}")
     @ApiOperation(value = "Update information about user")
     public UserResponseDto update(@PathVariable Long id,
-                                     @RequestBody UserRequestDto userRequestDto) {
+                                     @RequestBody @Valid UserRequestDto userRequestDto) {
         User user = userRequestDtoMapper.mapToModel(userRequestDto);
         user.setId(id);
         return userResponseDtoMapper.mapToDto(userService.update(user));
     }
 
     @DeleteMapping("/{id}")
-    @ApiOperation(value = "Delete user by ID")
+    @ApiOperation(value = "Delete user by id")
     public void delete(@PathVariable Long id) {
         userService.delete(id);
     }

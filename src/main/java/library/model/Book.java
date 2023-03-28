@@ -1,7 +1,8 @@
 package library.model;
 
 import lombok.Data;
-import javax.persistence.Column;
+import lombok.ToString;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,6 +23,5 @@ public class Book {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-    @Column(columnDefinition = "tinyint(1) default 0")
     private boolean taken;
 }

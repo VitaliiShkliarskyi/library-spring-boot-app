@@ -14,20 +14,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserMapper implements RequestDtoMapper<UserRequestDto, User>,
         ResponseDtoMapper<UserResponseDto, User> {
-    private final BookService bookService;
-
-    public UserMapper(BookService bookService) {
-        this.bookService = bookService;
-    }
 
     @Override
     public User mapToModel(UserRequestDto dto) {
         User user = new User();
         user.setName(dto.getName());
         user.setPhoneNumber(dto.getPhoneNumber());
-        user.setBooks(dto.getBookIds().stream()
-                .map(bookService::get)
-                .collect(Collectors.toList()));
         return user;
     }
 
