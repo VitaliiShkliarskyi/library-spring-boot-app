@@ -91,7 +91,7 @@ class UserControllerTest {
                 .when()
                 .post("/users")
                 .then()
-                .statusCode(400)
+                .statusCode(HttpStatus.BAD_REQUEST.value())
                 .body("timestamp", Matchers.notNullValue())
                 .body("status", Matchers.equalTo(400))
                 .body("errors", Matchers.hasItems("Invalid phone number"));

@@ -1,8 +1,8 @@
 package library.dto.request;
 
+import javax.validation.constraints.NotNull;
 import library.lib.ValidPhoneNumber;
 import lombok.Data;
-import javax.validation.constraints.NotNull;
 
 @Data
 public class UserRequestDto {

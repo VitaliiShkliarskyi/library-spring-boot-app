@@ -3,7 +3,6 @@ package library.service;
 import java.util.List;
 import library.model.User;
 import library.repository.UserRepository;
-import library.service.UserService;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
