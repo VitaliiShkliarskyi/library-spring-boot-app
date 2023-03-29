@@ -1,4 +1,4 @@
-package library.service.impl;
+package library.service;
 
 import java.util.List;
 import library.model.User;

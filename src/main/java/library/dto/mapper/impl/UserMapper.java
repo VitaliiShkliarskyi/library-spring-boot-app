@@ -1,5 +1,6 @@
 package library.dto.mapper.impl;
 
+import java.util.ArrayList;
 import java.util.stream.Collectors;
 import library.dto.mapper.RequestDtoMapper;
 import library.dto.mapper.ResponseDtoMapper;
@@ -18,6 +19,7 @@ public class UserMapper implements RequestDtoMapper<UserRequestDto, User>,
         User user = new User();
         user.setName(dto.getName());
         user.setPhoneNumber(dto.getPhoneNumber());
+        user.setBooks(new ArrayList<>());
         return user;
     }
 

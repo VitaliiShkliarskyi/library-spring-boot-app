@@ -62,7 +62,7 @@ public class BookController {
                                               @RequestParam(defaultValue = "title")
                                               @ApiParam(value = "Default sort field is 'title'")
                                               String sortBy) {
-        Sort sort = sortingService.create(page, size, sortBy);
+        Sort sort = sortingService.create(sortBy);
         PageRequest pageRequest = PageRequest.of(page, size, sort);
         return bookService.getAll(pageRequest).stream()
                 .map(bookResponseDtoMapper::mapToDto)
@@ -112,7 +112,7 @@ public class BookController {
     @GetMapping("/user/{id}")
     @ApiOperation(value = "Get book by user id")
     public List<BookResponseDto> getBookByUserId(@PathVariable Long id) {
-        return bookService.getBookByUserId(id).stream()
+        return bookService.getAllByUserId(id).stream()
                 .map(bookResponseDtoMapper::mapToDto)
                 .collect(Collectors.toList());
     }
@@ -120,7 +120,15 @@ public class BookController {
     @GetMapping("/user/by-number")
     @ApiOperation(value = "Get book by user phone number")
     public List<BookResponseDto> getBookByUserPhoneNumber(@RequestParam String number) {
-        return bookService.getBookByUserPhoneNumber(number).stream()
+        return bookService.getAllByUserPhoneNumber(number).stream()
+                .map(bookResponseDtoMapper::mapToDto)
+                .collect(Collectors.toList());
+    }
+
+    @GetMapping("/available")
+    @ApiOperation(value = "Get all available books")
+    public List<BookResponseDto> getAllAvailableBooks() {
+        return bookService.getAllAvailableBooks().stream()
                 .map(bookResponseDtoMapper::mapToDto)
                 .collect(Collectors.toList());
     }

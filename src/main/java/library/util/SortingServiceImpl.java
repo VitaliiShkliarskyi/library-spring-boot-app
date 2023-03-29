@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SortingServiceImpl implements SortingService {
     @Override
-    public Sort create(Integer page, Integer size, String sortBy) {
+    public Sort create(String sortBy) {
         List<Sort.Order> orders = new ArrayList<>();
         if (sortBy.contains(":")) {
             String[] sortingFields = sortBy.split(";");

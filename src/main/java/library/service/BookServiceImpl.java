@@ -1,11 +1,10 @@
-package library.service.impl;
+package library.service;
 
 import java.util.List;
 import library.model.Book;
 import library.model.User;
 import library.repository.BookRepository;
 import library.repository.UserRepository;
-import library.service.BookService;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -77,12 +76,17 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<Book> getBookByUserId(Long id) {
+    public List<Book> getAllByUserId(Long id) {
         return bookRepository.findAllByUserId(id);
     }
 
     @Override
-    public List<Book> getBookByUserPhoneNumber(String number) {
+    public List<Book> getAllByUserPhoneNumber(String number) {
         return userRepository.findByPhoneNumber(number).getBooks();
+    }
+
+    @Override
+    public List<Book> getAllAvailableBooks() {
+        return bookRepository.findAllByTakenIsFalse();
     }
 }

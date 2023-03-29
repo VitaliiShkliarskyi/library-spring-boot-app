@@ -21,7 +21,9 @@ public interface BookService {
 
     Book returnBook(Long id);
 
-    List<Book> getBookByUserId(Long id);
+    List<Book> getAllByUserId(Long id);
 
-    List<Book> getBookByUserPhoneNumber(String number);
+    List<Book> getAllByUserPhoneNumber(String number);
+
+    List<Book> getAllAvailableBooks();
 }

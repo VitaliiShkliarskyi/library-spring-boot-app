@@ -63,7 +63,7 @@ public class UserController {
                                             @RequestParam(defaultValue = "name")
                                             @ApiParam(value = "Default sort field is 'name'")
                                             String sortBy) {
-        Sort sort = sortingService.create(page, size, sortBy);
+        Sort sort = sortingService.create(sortBy);
         PageRequest pageRequest = PageRequest.of(page, size, sort);
         return userService.getAll(pageRequest).stream()
                 .map(userResponseDtoMapper::mapToDto)
