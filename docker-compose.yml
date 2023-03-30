@@ -13,7 +13,7 @@ services:
   app:
     depends_on:
       - mysqldb
-    image: shvetalio/library-api
+    image: shvetalio/library-app
     build: .
     env_file: ./.env
     ports:
