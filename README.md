@@ -1,7 +1,9 @@
 ![Header](src/main/resources/pictures/Library.jpeg)
 
 ##  Description
-A Spring Boot application that demonstrates the main CRUD operation, running in a virtual environment.
+A **REST API** that demonstrates library functionality, running in a virtual environment. Developed using **Spring Boot** and **Spring Data JPA**. 
+**Docker Compose** is used to orchestrate the various containers required for the application. The API is fully documented and has a detailed description of all endpoints using **Swagger**.
+Rigorous testing using **JUnit 5** and **Mockito** guarantees the reliability of the code.
 
 ---
 
@@ -19,6 +21,7 @@ Project based on Three-Tier architecture:
 - Spring Boot 2.7
 - MySQL 5
 - JUnit 5
+- Mockito
 - Swagger 
 - Docker Compose
 
@@ -60,7 +63,7 @@ Host: **localhost**; Port: **3307**; User: **root**; Password: **826220228**; Da
 2. Clone the project to your computer
 3. Install MySQL and configure the database connection.
 4. Add **DB_USERNAME** and **DB_PASSWORD** **application.properties** file
-5. Run LibraryApiApplication
+5. Run **LibraryApiApplication**
 6. To send a request to the application, use the local port: **http://localhost:8080**
 7. For testing endpoints, you can use Swagger UI: **http://localhost:8080/swagger-ui/#/**
 8. You can also use InjectorController to inject some test data directly to the DB: **http://localhost:8080/inject**
