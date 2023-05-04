@@ -62,7 +62,7 @@ Host: **localhost**; Port: **3307**; User: **root**; Password: **826220228**; Da
 1. Fork this repository
 2. Clone the project to your computer
 3. Install MySQL and configure the database connection.
-4. Add **DB_USERNAME** and **DB_PASSWORD** **application.properties** file
+4. Add **DB_USERNAME** and **DB_PASSWORD** to the **application.properties**
 5. Run **LibraryApiApplication**
 6. To send a request to the application, use the local port: **http://localhost:8080**
 7. For testing endpoints, you can use Swagger UI: **http://localhost:8080/swagger-ui/#/**
