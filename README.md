@@ -50,7 +50,7 @@ Project based on Three-Tier architecture:
 1. Fork this repository
 2. Clone the project to your computer
 3. Install [Docker](https://www.docker.com/products/docker-desktop/)
-4. Open the project and run **mvn clean package** in terminal to build the project and then run **docker compose up**
+4. Open the project and run **mvn package -DskipTests** in terminal to build the project and then run **docker compose up**
 5. The application and database with necessary configurations will run as separate services that can already interact with each other. The interaction description is located in the **docker-compose.yml** file.
 6. To send a request to the application, use the access port to the virtual machine: **http://localhost:6868**
 7. For testing endpoints, you can use Swagger UI: **http://localhost:6868/swagger-ui/#/**
